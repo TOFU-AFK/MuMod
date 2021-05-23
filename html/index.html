@@ -53,13 +53,13 @@
   <script src="index.js"></script>
   <script>
     var id = 0;
-	  var all = $('div.ui.secondary.vertical.pointing.menu a').each((i, elem) => {
-	   	elem.addEventListener('click', e => {
-		   	elem.classList.add('active');
-			  all[id].classList.remove('active');
-		  	muMod(id = i);
-	  	});
-	  });
+    var all = $('div.ui.secondary.vertical.pointing.menu a').each((i, elem) => {
+      elem.addEventListener('click', e => {
+        elem.classList.add('active');
+	all[id].classList.remove('active');
+	muMod(id = i);
+      });
+    });
     //调用软件的方法
     //window.mumod.+方法名(参数);
     //window.mumod.toast("测试");
