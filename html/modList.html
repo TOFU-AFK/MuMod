@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mods</title>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="res/semantic@2.4.2.css">
+  <script src="res/jquery@3.4.1.js"></script>
+  <script src="res/semantic@2.4.2.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="list" class="ui container">
+    <div id="mods">
+      
+    </div>
+  </div>
+  <script src="js/muMod.js"></script>
+  <script>
+    var oldName;
+
+    function getModHtml(name, description) {
+      return '<div class="mumod_mod"><div class="mumod_mod_left"><div class="mumod_mod_icon"><i class="file icon"></i></div><div class="mumod_vertical_divider"></div></div><div class="mumod_mod_right"><p class="mumod_mod_name">' + name + '</p><div class="mumod_mod_content"><div class="mumod_mod_description"><p>' + description + '</p><a href="mod/editMod.html"></div><div class="mumod_mod_button"><button onclick=' + "'openMod(" + '"' + name + '"' + ")'" + ' class="fluid ui violet button">打开模组</button></a></div></div></div></div>'
+    }
+
+    function getModsHtml() {
+      var name = getModsName();
+      var description = getModsDescription();
+      oldName = name;
+      var html = '';
+      for (i = 0; i < name.length; i++) {
+        html += getModHtml(name[i], description[i]);
+      }
+      return html
+    }
+
+    $('#mods').html(getModsHtml());
+
+    var update = setInterval(updateList, 2000);
+
+    function updateList() {
+      if (canUpdate()) {
+        $('#mods').html(getModsHtml());
+      }
+    }
+
+    function canUpdate() {
+      var name = getModsName();
+      if (oldName.toString() != name.toString()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

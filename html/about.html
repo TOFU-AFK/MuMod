@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关于</title>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="res/semantic@2.4.2.css">
+  <script src="res/jquery@3.4.1.js"></script>
+  <script src="res/semantic@2.4.2.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="purple_card">
+    <div class="ui segment">
+      <div class="mumod_image_text">
+        <img class="ui centered rounded medium image" src="./images/background.jpg">
+        <div class="text">
+          <div class="mumod_title">MuMod</div>
+          <div class="mumod_content" style="font-size:12px">
+            <p id="version">版本:v0.01</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="ui grid">
+      <div class="eight wide column">
+        <div class="mumod_container">
+          <div class="mumod_title">
+            开发者
+          </div>
+          <div class="mumod_content">
+            <p data-tooltip="界面设计，代码">画盒豆腐</p>
+            <p data-tooltip="代码编辑器部分功能">i hope</p>
+            <p data-tooltip="部分界面设计">尹决义</p>
+          </div>
+        </div>
+      </div>
+      <div class="eight wide column">
+        <div class="mumod_container">
+          <div class="mumod_title">
+            群聊
+          </div>
+          <div class="mumod_content">
+            <p data-tooltip="死群">Q群:868076396</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/muMod.js"></script>
+  <script>
+  $('#version').text('版本:'+muMod.getAppVersionName());
+  </script>
+</body>
+
+</html>

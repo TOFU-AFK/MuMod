@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic UI Homepage</title>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="res/semantic@2.4.2.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="res/jquery@3.4.1.js"></script>
+  <script src="res/semantic@2.4.2.js"></script>
+</head>
+
+<body>
+  <div class="ui container">
+    <div class="ui medium header">
+      <p>.Menu</p>
+    </div>
+    <div class="ui secondary vertical pointing menu" style="width:100%">
+      <a id="new" class="item" onclick="on('new')">
+        <i class="folder icon"></i>
+        <p>新建</p>
+      </a>
+      <a id="about" class="item" onclick="on('about')">
+        <i class="icon"></i>
+        <p>关于</p>
+      </a>
+    </div>
+  </div>
+  <!--更多-->
+  <div class="bottom">
+    <div class="ui container">
+      
+    </div>
+  </div>
+  
+  <!--对话框部分-->
+  <div id="explain" class="ui basic modal">
+    <div class="ui icon header">
+      <p><i class="bug icon"></i>提示</p>
+    </div>
+    <div class="content">
+      <p>刷新按钮在部分手机可能会出问题，如果刷新无效，可以重进软件</p>
+    </div>
+    <div class="actions">
+      <button class="ui violet basic button ok"><i class="checkmark icon"></i>知道了</button>
+    </div>
+  </div>
+  
+  <script src="js/muMod.js"></script>
+  <script src="index.js"></script>
+  <script>
+    var lastItem = null;
+
+    function on(id) {
+      if(lastItem!=null){
+        lastItem.classList.remove('active');
+      }
+      var item = document.getElementById(id);
+      lastItem = item;
+      item.classList.add('active');
+      if (id == 'new') {
+        muMod.change(0);
+      }
+      if(id == 'about'){
+        muMod.change(1);
+      }
+    }
+    //调用软件的方法
+    //window.mumod.+方法名(参数);
+    //window.mumod.toast("测试");
+    //window.mumod.change(0);0为NewMod窗口
+  </script>
+</body>
+
+</html>

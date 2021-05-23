@@ -1,0 +1,199 @@
+body {
+  padding: 24px;
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+* {
+  -webkit-user-select: none;
+}
+
+p {
+  color: rgb(103, 95, 144);
+  margin: 3px;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
+
+.mumod_bottom {
+  padding: 24px;
+  position: fixed;
+  left: 0px;
+  bottom: 40%;
+  width: 100%;
+  height: 120px;
+  z-index: 999;
+}
+
+.mumod_title {
+  font-weight: bold;
+  color: rgb(103, 95, 144);
+}
+
+
+.mumod_content {
+  padding: 0;
+}
+
+.mumod_container {
+  padding: 12px;
+}
+
+.gray_card {
+  padding: 6px;
+  background-color: #eeeeee;
+  border-radius: 6px;
+}
+
+.yellow_card {
+  padding: 6px;
+  background-color: rgb(250, 246, 233);
+  border-radius: 6px;
+  color: rgb(198, 175, 94);
+  overflow: hidden;
+}
+
+.yellow_card_text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.yellow_card p {
+  color: rgb(198, 175, 94);
+}
+
+.mumod_m6 {
+  margin: 6px;
+}
+
+.mumod_mt6 {
+  margin-top: 6px;
+}
+
+.mumod_mt12 {
+  margin-top: 12px;
+}
+
+.purple_card {
+  background-color: rgb(103, 95, 144);
+  padding: 6px;
+  border-radius: 6px;
+  background: -webkit-linear-gradient(left, rgb(103, 95, 144), rgb(212, 210, 228));
+  /*for safari5.1-6.0*/
+
+  background: -o-linear-gradient(left, rgb(103, 95, 144), rgb(212, 210, 228));
+  /*Opera 11.1-12.0*/
+
+  background: -moz-linear-gradient(left, rgb(103, 95, 144), rgb(212, 210, 228));
+  /*firefox 3.6-15*/
+
+  background: linear-gradient(left, rgb(103, 95, 144), rgb(212, 210, 228));
+  /*标准语法，必须放在最后*/
+}
+
+.mumod_image_text .text {
+  position: fixed;
+  top: 16%;
+  left: 16%;
+}
+
+.mumod_image_text .text .mumod_title {
+  color: white;
+}
+
+.mumod_image_text .text p {
+  color: white;
+}
+
+.mumod_mod {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.mumod_mod_icon {
+  background-color: rgb(245, 249, 249);
+  width: 25px;
+  height: 25px;
+  border-radius: 10px;
+  padding-left: 4px;
+  padding-top: 2px;
+}
+
+.mumod_mod_name {
+  /*color: rgb(103, 95, 144);*/
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mumod_mod_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mumod_mod_description {
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  overflow: scroll;
+  right: -8px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.mumod_mod_button {
+  position: absolute;
+  width: 100%;
+  top: 22px;
+}
+
+.mumod_mod_left {
+  width: 25px;
+  height: 100%;
+}
+
+.mumod_mod_right {
+  width: 100%;
+  padding-left: 12px;
+}
+
+.mumod_vertical_divider {
+  margin: auto;
+  width: 1px;
+  height: 100%;
+  background-color: rgb(103, 95, 144);
+}
+
+.mumod_small_white_card {
+  background-color: white;
+  border-radius: 6px;
+  margin: 1px;
+  padding: 6px;
+}
+
+.mumod_item {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.mumod_left {
+  width: 20%;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.mumod_right {
+  margin-left: 40%;
+  height: 100%;
+}
