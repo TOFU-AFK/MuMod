@@ -19,11 +19,11 @@
       <p>.Menu</p>
     </div>
     <div class="ui secondary vertical pointing menu" style="width:100%">
-      <a id="new" class="item" onclick="on('new')">
+      <a id="new" class="item active" >
         <i class="folder icon"></i>
         <p>新建</p>
       </a>
-      <a id="about" class="item" onclick="on('about')">
+      <a id="about" class="item" >
         <i class="icon"></i>
         <p>关于</p>
       </a>
@@ -52,22 +52,14 @@
   <script src="js/muMod.js"></script>
   <script src="index.js"></script>
   <script>
-    var lastItem = null;
-
-    function on(id) {
-      if(lastItem!=null){
-        lastItem.classList.remove('active');
-      }
-      var item = document.getElementById(id);
-      lastItem = item;
-      item.classList.add('active');
-      if (id == 'new') {
-        muMod.change(0);
-      }
-      if(id == 'about'){
-        muMod.change(1);
-      }
-    }
+    var id = 0;
+	  var all = $('div.ui.secondary.vertical.pointing.menu a').each((i, elem) => {
+	   	elem.addEventListener('click', e => {
+		   	elem.classList.add('active');
+			  all[id].classList.remove('active');
+		  	muMod(id = i);
+	  	});
+	  });
     //调用软件的方法
     //window.mumod.+方法名(参数);
     //window.mumod.toast("测试");
