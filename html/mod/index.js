@@ -28,7 +28,6 @@ var setCompleteData = function(data) {
 	});
 }
 
-editor.setValue('');
 (function() {
 	let arr = [
 			'名称', 'name', 'string',

@@ -15,7 +15,6 @@
 <body>
   <div id="list" class="ui container">
     <div id="mods">
-      
     </div>
   </div>
   <script src="js/muMod.js"></script>
@@ -32,7 +31,11 @@
       oldName = name;
       var html = '';
       for (i = 0; i < name.length; i++) {
-        html += getModHtml(name[i], description[i]);
+        if (name[i] == '' || description[i] == '') {
+          break;
+        } else {
+          html += getModHtml(name[i], description[i]);
+        }
       }
       return html
     }

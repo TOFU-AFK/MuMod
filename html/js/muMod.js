@@ -14,7 +14,7 @@ function getModsName() {
     str = str.substring(0, str.length - 1);
     return str.split(",");
   } catch (e) {
-    return 0
+    return null
   }
 }
 
@@ -28,7 +28,7 @@ function getModsDescription() {
     str = str.substring(0, str.length - 1);
     return str.split(",");
   } catch (e) {
-    return 0
+    return null
   }
 }
 
