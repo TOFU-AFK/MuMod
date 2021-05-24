@@ -81,6 +81,14 @@ function getFileTextByPath(path) {
   }
 }
 
+function getModJsonPath() {
+  try {
+    return muMod.getModJsonPath();
+  } catch (e) {
+    return '测试数据'
+  }
+}
+
 function BooleanV(v) {
   if (v == 1) {
     return true;
