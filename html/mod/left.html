@@ -1,0 +1,65 @@
+<!--editMod界面左侧侧滑栏-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>left</title>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="../res/semantic@2.4.2.css">
+  <script src="../res/jquery@3.4.1.js"></script>
+  <script src="../res/semantic@2.4.2.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .mumod_description {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body style="padding:0">
+  <div class="ui styled accordion">
+    <div class="title">
+      <p><i class="dropdown icon"></i><span id="modName">模组名称</span></p>
+    </div>
+    <div class="content">
+      <div class="mumod_description">
+        <p id="description">无法获取描述</p>
+      </div>
+      <p>代码格式: <span id="codeForm">默认</span></p>
+      <p>模组类型: <span id="modType">JSON模组</span></p>
+      <div class="ui small basic icon buttons">
+        <button data-tooltip="编辑" class="ui button"><i class="edit icon"></i></button>
+        <button data-tooltip="删除" class="ui button"><i class="times icon"></i></button>
+        <button data-tooltip="生成" class="ui button"><i class="file icon"></i></button>
+      </div>
+    </div>
+    <div class="title">
+      <p><i class="dropdown icon"></i>文件</p>
+    </div>
+    <div class="content">
+      <p>制作中</p>
+    </div>
+    <div class="title">
+      <p><i class="dropdown icon"></i>依赖关系</p>
+    </div>
+    <div class="content">
+      <p>测试</p>
+    </div>
+    <script src="../js/muMod.js"></script>
+    <script>
+      $('.ui.accordion')
+        .accordion();
+
+      $('#modName').text(muMod.getModName());
+      $('#description').text(muMod.getModDescription());
+      $('#codeForm').text(muMod.getModForm());
+      $('#modType').text(muMod.getModType());
+    </script>
+</body>
+
+</html>

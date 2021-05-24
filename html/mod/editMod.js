@@ -16,6 +16,6 @@ function addTab() {
 }
 
 //根据tab上的索引获取文件内容
-function getText(index){
-  
+function getText(index) {
+
 }
