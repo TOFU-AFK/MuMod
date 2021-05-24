@@ -1,21 +1,22 @@
 var tab = new Array();
+// 初始化editor(）
+var editor = ace.edit("editor");
 
 var lastFile = null;
 var file = null;
 
-function OpenFile(id) {
+var tab = new Tab('tab');
+
+function openFile(id) {
   if (lastFile != null) {
     lastFile.removeClass('active');
   }
   $('#' + id).addClass('active');
   lastFile = $('#' + id);
+  var text = muMod.getFileTextByPath(tab.getPathByName($('#' + id).children('p').text()));
+  editor.setValue(text);
 }
 
-function addTab() {
-
-}
-
-//根据tab上的索引获取文件内容
-function getText(index) {
-
-}
+tab.add(muMod.getModPath()+'/mod.json');
+tab.add(muMod.getModPath()+'/Mconfig.json');
+tab.draw();

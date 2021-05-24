@@ -57,18 +57,34 @@ function finish() {
   muMod.finish();
 }
 
-function setModIcon(){
+function setModIcon() {
   muMod.setModIcon();
 }
 
-function hasIcon(){
+function hasIcon() {
   return BooleanV(muMod.hasIcon());
 }
 
-function BooleanV(v){
-  if(v==1){
+function getModPath() {
+  try {
+    return muMod.getModPath();
+  } catch (e) {
+    return '测试数据'
+  }
+}
+
+function getFileTextByPath(path) {
+  try {
+    return muMod.getFileTextByPath(path);
+  } catch (e) {
+    return '测试数据'
+  }
+}
+
+function BooleanV(v) {
+  if (v == 1) {
     return true;
-  }else{
+  } else {
     return false
   }
 }

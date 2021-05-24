@@ -1,5 +1,3 @@
-// 初始化editor(）
-var editor = ace.edit("editor");
 editor.setOptions({
   // 默认:false
   wrap: true, // 换行
@@ -16,3 +14,4 @@ editor.getSession().setMode("ace/mode/hjson");
 editor.setFontSize(12);
 editor.setReadOnly(false) // 设置编辑器是否只读
 editor.getSession().setTabSize(4);
+editor.setValue(muMod.getFileTextByPath(muMod.getModPath()+'/mod.json'));
