@@ -17,6 +17,7 @@ function openFile(id) {
   editor.setValue(text);
 }
 
+//因为调用了接口，所以在浏览器中将会无效
 tab.add(muMod.getModPath()+'/mod.json');
 tab.add(muMod.getModPath()+'/Mconfig.json');
 tab.draw();
