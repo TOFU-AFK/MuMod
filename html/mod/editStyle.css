@@ -59,3 +59,35 @@ div.ace_gutter .ace_gutter-cell {
   padding-left: 6px;
   padding-right: 8px;
 }
+
+.arrow {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  background-color: #eeeeee;
+  height: 35px;
+  width: 35px;
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 6px;
+}
+
+.arrow i{
+  pointer-events: none;
+}
+
+.arrow:hover {
+  transform: translate(-100px, 0px);
+  transition: transform 0.35s;
+}
+
+.drawerBackground {
+  position: absolute;
+  right: -60px;
+  top: 30%;
+  background-color: #eeeeee;
+  height: 40%;
+  width: 60px;
+  border-radius: 5px;
+  display: none;
+}

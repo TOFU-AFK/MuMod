@@ -27,27 +27,28 @@
   <!--tab栏-->
   <div class="mumod_transverse_rolling">
     <div id="tab" class="ui breadcrumb">
-      
     </div>
   </div>
   <!--代码编辑框-->
   <div id="box">
     <div id="editor"></div>
   </div>
-  <!--要文件 -->
+  <!--主要文件 -->
   <script src="../res/src/ace.js"></script>
   <!-- 用来提供代码提示和自动补全的插件 -->
   <script src="../res/src/ext-language_tools.js"></script>
   <!--引入JavaScript面向对象类库-->
   <script src="../res/c.js"></script>
   <script src="../js/muMod.js"></script>
+  <!--引入自定义控件-->
   <script src="../view/tab.js"></script>
+  <script src="../view/drawer.js"></script>
   <script src="editMod.js"></script>
   <script src="editor.js"></script>
   <div id="menu">
     <i class="icon cut"></i>
-    <i class="icon paste"></i>
-    <i class="icon copy"></i>
+    <i id="paste" class="icon paste"></i>
+    <i id="copy" class="icon copy"></i>
   </div>
   <script src="menu/index.js"></script>
   <script src="index.js"></script>

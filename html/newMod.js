@@ -1,4 +1,4 @@
-var type = 'JSON模组'; //模组类型
+var type = 'JSON+JS模组'; //模组类型
 var form = '默认'; //代码格式
 // 初始化editor(）
 var editor = ace.edit("editor");

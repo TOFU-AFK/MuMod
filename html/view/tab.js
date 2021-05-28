@@ -2,15 +2,16 @@ var Tab = C.createClass({
   // 构造函数
   init: function(id) {
     this.id = id;
-    this.item = '';
+    this.items = '';
     this.files = [];
   },
 
   draw: function() {
+    this.items = '';
     for (i = 0; i < this.files.length; i++) {
-      this.item += this.generateItem(this.getFileName(this.files[i]), i);
+      this.items += this.generateItem(this.getFileName(this.files[i]), i);
     }
-    $('#' + this.id).html(this.item);
+    $('#' + this.id).html(this.items);
   },
 
   getFileName: function(path) {
@@ -35,12 +36,14 @@ var Tab = C.createClass({
 
   add: function(path) {
     this.files.push(path);
+    this.draw();
   },
 
   remove: function(path) {
     if (this.files.indexOf(path) > -1) {
       this.files.splice(this.files.indexOf(path), 1);
     }
+    this.draw();
 
   }
 
