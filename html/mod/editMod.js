@@ -6,7 +6,6 @@ var lastFile = null;
 var file = null;
 
 var tab = new Tab('tab');
-var drawer = new Drawer(['啊这'],'drawer');
 
 function openFile(id) {
   if (lastFile != null) {
@@ -20,6 +19,4 @@ function openFile(id) {
 
 /*首次进入打开的文件*/
 tab.add(getModJsonPath());
-tab.add(getModPath()+'/Mconfig.json');
-
-drawer.draw();
+tab.add(getModPath() + '/Mconfig.json');
