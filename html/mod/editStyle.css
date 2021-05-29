@@ -26,6 +26,9 @@
 #tab div.mumod_tab_item {
 	margin-left: 10px;
 }
+#tab div.mumod_tab_item .left {
+	margin-right: 3px;
+}
 
 #box {
   flex: 1;
