@@ -14,6 +14,25 @@ function openFile(id) {
   $('#' + id).addClass('mumod_active');
   lastFile = $('#' + id);
   var text = getFileTextByPath(tab.getPathById(id));
+  var language = getFileNameByPath(tab.getPathById(id)).split('.')[1];
+  
+  switch(language){
+    case undefined:
+      language = 'hjson';
+      break;
+    case 'json':
+      language = 'hjson';
+      break;
+    case 'js':
+      language = 'Javascript';
+      break;
+    case 'java':
+      language = 'java';
+      break;
+    case 'mumod':
+      language = 'json';
+  }
+  editor.getSession().setMode("ace/mode/"+language);
   editor.setValue(text);
 }
 
