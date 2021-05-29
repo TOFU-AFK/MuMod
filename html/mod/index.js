@@ -13,22 +13,23 @@ $('.ace_scroller')[0].addEventListener('keydown', e => {
 	if (e.keyCode == 8) codehint[0].style.display = 'none'
 }) */
 
-var setCompleteData = function(data) {
-	var langTools = ace.require("ace/ext/language_tools");
-	langTools.addCompleter({
-		getCompletions: function(editor, session, pos, prefix, callback) {
-			// console.log(callback, editor.completer.getPopup().setRow(10));
-			if (prefix.length === 0) {
-				return callback(null, []);
-			} else {
-				return callback(null, data);
-			}
-
-		}
-	});
-}
 
 (function() {
+	var setCompleteData = function(data) {
+		var langTools = ace.require("ace/ext/language_tools");
+		langTools.addCompleter({
+			getCompletions: function(editor, session, pos, prefix, callback) {
+				// console.log(callback, editor.completer.getPopup().setRow(10));
+				if (prefix.length === 0) {
+					return callback(null, []);
+				} else {
+					return callback(null, data);
+				}
+
+			}
+		});
+	}
+
 	let arr = [
 			'名称', 'name', 'string',
 			'描述', 'description', 'string',
@@ -44,16 +45,17 @@ var setCompleteData = function(data) {
 	}
 	var description = {
 		name: '你东西的名称，默认为文件名',
-		
+
 	}
 	for (var i = 0; i < arr.length; i += 3) {
 		arr2.push({
 			meta: arr[i],
 			type: "snippet",
 			caption: arr[i + 1],
-			snippet: arr[i + 1] + `: ${(obj[arr[i + 2]] || '') + (description[arr[i + 1]] ? ' // ' + description[arr[i + 1]] : '')}\n`,
+			snippet: arr[i + 1] +
+				`: ${(obj[arr[i + 2]] || '') + (description[arr[i + 1]] ? ' // ' + description[arr[i + 1]] : '')}\n`,
 			score: 1
 		});
 	}
 	setCompleteData(arr2);
-})();
+}());
