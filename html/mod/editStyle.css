@@ -20,6 +20,13 @@
   margin-bottom: 4px;
 }
 
+#tab, #tab div.mumod_tab_item {
+	display: flex;
+}
+#tab div.mumod_tab_item {
+	margin-left: 10px;
+}
+
 #box {
   flex: 1;
 }

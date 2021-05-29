@@ -1,4 +1,4 @@
-// $('div.ui a#0')[0].click();
+/* $('div.ui a#0')[0].click(); */
 /* let codehint = $('#codehint'), textarea = $('.ace_text-input');
 window.addEventListener('input', e => {
 	setTimeout(() => {
@@ -52,9 +52,8 @@ $('.ace_scroller')[0].addEventListener('keydown', e => {
 			meta: arr[i],
 			type: "snippet",
 			caption: arr[i + 1],
-			snippet: arr[i + 1] +
-				`: ${(obj[arr[i + 2]] || '') + (description[arr[i + 1]] ? ' // ' + description[arr[i + 1]] : '')}\n`,
-			score: 1
+			snippet: `${arr[i + 1]}: ${(obj[arr[i + 2]] || '') + (description[arr[i + 1]] ? ' // ' + description[arr[i + 1]] : '')}\n`,
+			score: 10
 		});
 	}
 	setCompleteData(arr2);
