@@ -2,7 +2,6 @@
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding: 6px;
 }
 
 /*滚动条样式*/
@@ -10,9 +9,58 @@
   height: 2px;
 }
 
+.mumod_tab {
+  width: 100%;
+  height: 35px;
+  background-color: #eeeeee;
+  display: flex;
+}
+
+.mumod_tab_item {
+  background-color: #eeeeee;
+  height: 100%;
+  display: flex;
+  /*width: 60px;*/
+}
+
+.mumod_tab_item .left {
+  width: 35px;
+  height: 100%;
+}
+
+.mumod_tab_item .right {
+  width: 35px;
+  height: 100%;
+}
+
+.mumod_tab_item .middle {
+  height: 100%;
+}
+
+.mumod_left_icon {
+  width: 100%;
+  height: 100%;
+  padding: 25%;
+}
+
+.mumod_right_icon{
+  width: 100%;
+  height: 100%;
+  padding: 18%;
+  color: rgb(86, 80, 121);
+}
+
+/*.mumod_tab_item:hover {
+  background-color: #ffffff;
+}*/
+
+.mumod_tab_item_content{
+  padding-top: 6px;
+  color: rgb(86, 80, 121);
+}
+
 .mumod_active {
-  background-color: rgb(127, 191, 127);
-  color: rgb(127, 165, 127);
+  background-color: #ffffff;
 }
 
 #title {
@@ -62,10 +110,10 @@ div.ace_gutter .ace_gutter-cell {
 
 .dragbar {
   position: absolute;
-  right:0;
+  right: 0;
   /*top: 50%;*/
-  width:12px;
-  height:100%;
+  width: 12px;
+  height: 100%;
   /*border-radius: 12px;*/
   background-color: rgb(86, 80, 121);
   padding-left: 3px;
@@ -74,9 +122,9 @@ div.ace_gutter .ace_gutter-cell {
   padding-bottom: 85%;
 }
 
-.ellipse{
-  height:100%;
-  width:100%;
+.ellipse {
+  height: 100%;
+  width: 100%;
   border-radius: 12px;
   background-color: #ffffff;
 }

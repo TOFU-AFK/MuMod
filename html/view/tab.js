@@ -2,16 +2,20 @@ var Tab = C.createClass({
   // 构造函数
   init: function(id) {
     this.id = id;
-    this.items = '';
     this.files = [];
   },
 
   draw: function() {
-    this.items = '';
+    $('#' + this.id).empty();
     for (i = 0; i < this.files.length; i++) {
-      this.items += this.generateItem(this.getFileName(this.files[i]), i);
+      var suffix = this.getFileName(this.files[i]).split('.')[1];
+      if(suffix==undefined){
+        suffix='file'
+      }
+      var item = this.generateItem(this.getFileName(this.files[i]), i, suffix);
+      //设置第一个项目为打开状态
+      $('#' + this.id).append(item);
     }
-    $('#' + this.id).html(this.items);
   },
 
   getFileName: function(path) {
@@ -24,14 +28,19 @@ var Tab = C.createClass({
 
   getPathByName: function(name) {
     for (i = 0; i < this.files.length; i++) {
-      if(this.getFileName(this.files[i])==name){
+      if (this.getFileName(this.files[i]) == name) {
         return this.files[i];
       }
     }
   },
 
-  generateItem: function(name, index) {
-    return '<i class="right bordered file icon divider"></i><a id="' + index + '" class="section" onclick="openFile(' + "'" + index + "'" + ')"><p>' + name + '</p></a>'
+  generateItem: function(name, index, icon) {
+    var run = "openFile('" + index + "')";
+    return $('<div id="' + index + '" onclick="' + run + '" class="mumod_tab_item"><div class="left"><div class="mumod_left_icon"><img src="../images/' + icon + '.svg"/></div></div><div class="middle"><div class="mumod_tab_item_content">' + name + '</div></div><div class="right"><div class="mumod_right_icon"><i class="times icon"></i></div></div></div>');
+  },
+
+  getPathById: function(id) {
+    return this.files[id];
   },
 
   add: function(path) {

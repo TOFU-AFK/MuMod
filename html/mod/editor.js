@@ -14,4 +14,3 @@ editor.getSession().setMode("ace/mode/hjson");
 editor.setFontSize(12);
 editor.setReadOnly(false) // 设置编辑器是否只读
 editor.getSession().setTabSize(4);
-editor.setValue(getFileTextByPath(getModPath()+'/mod.json'));
