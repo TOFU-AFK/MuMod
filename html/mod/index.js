@@ -1,4 +1,4 @@
-$('div.ui a#0')[0].click();
+// $('div.ui a#0')[0].click();
 /* let codehint = $('#codehint'), textarea = $('.ace_text-input');
 window.addEventListener('input', e => {
 	setTimeout(() => {
