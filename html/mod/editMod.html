@@ -52,10 +52,10 @@
 		<script src="editMod.js"></script>
 		<script src="editor.js"></script>
 		<div id="menu">
-			<i id="copy" class="icon copy" @click="copy();hide()"></i>
-			<i id="paste" class="icon paste" @click="paste();hide()"></i>
-			<i id="cut" class="icon cut" @click="cut();hide()"></i>
-			<i id="find" class="icon search" @click="search();hide()"></i>
+			<button @click="copy() && hide()"><i id="copy" class="icon copy"></i></button>
+			<button @click="paste() && hide()"><i id="paste" class="icon paste"></i></button>
+			<button @click="cut() && hide()"><i id="cut" class="icon cut"></i></button>
+			<button @click="search() && hide()"><i id="find" class="icon search"></i></button>
 		</div>
 		<link rel="stylesheet" href="menu/style.css" />
 		<script>Math.clamp = function(a, b, c) {

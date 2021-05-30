@@ -1,14 +1,33 @@
-#menu {
-	background-color: rgb(31, 39, 45);
+#menu.show {
+	background-color: rgb(25, 30, 45);
 	color: snow;
 	position: absolute;
 	display: none;
 	z-index: 100;
 	transform: translate(-10%, -10%);
-	padding: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: all .2s;
+}
+#menu.hide {
+	color: transparent;
+	background-color: transparent;
 }
 
 #menu i::before {
+	color: rgba(255, 255, 255, 0.87);
 	width: 25px;
 	height: 25xp;
+}
+#menu button {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0;
+	background: none;
+	width: 30px;
+	height: 30px;
+}
+#menu button:hover {
+	background-color: grey;
 }

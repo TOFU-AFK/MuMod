@@ -6,7 +6,7 @@ var menu = new Vue({
 			this.timeout = setTimeout(() => {
 				this.interval = setInterval(this.click, 100);
 				editor.focus();
-				editor.selection.selectWord();
+				setTimeout(() => editor.selection.selectWord(), 50);
 			}, 600);
 		}, true);
 		editor.container.addEventListener('touchend', e => {
@@ -21,14 +21,16 @@ var menu = new Vue({
 		click() {
 			let [x, y] = this.cursor.style.transform.replace(/.+\((.+)\)/, '$1').split(',');
 			let style = this.$el.style;
-			style.left = Math.clamp(25, parseInt(x), document.body.clientWidth - this.$el.children.length * 25) +
+			style.left = Math.clamp(25, parseInt(x), document.body.clientWidth - this.$el.children.length * 30) +
 				'px';
 			style.top = Math.clamp(5, parseInt(y), document.body.clientHeight - 25) + 'px';
-			style.display = 'block';
+			style.display = 'flex';
+			this.$el.className = 'show';
 			// console.log(cursor.style.transform.replace(/.+\((.+)\)/, '$1'));
 		},
 		hide() {
-			this.$el.style.display = 'none';
+			this.$el.className = 'hide';
+			setTimeout(() => this.$el.style.display = 'none', parseInt(this.$el.style.transitionDuration) * 1000);
 			clearInterval(this.interval);
 		},
 		// 复制
@@ -36,6 +38,7 @@ var menu = new Vue({
 			this.setClipBoardData(editor.getCopyText());
 			editor.clearSelection();
 			editor.focus();
+			return true;
 		},
 		// 粘贴
 		paste() {
@@ -49,6 +52,7 @@ var menu = new Vue({
 			window.addEventListener('paste', paste);
 			document.execCommand('paste');
 			window.removeEventListener('paste', paste); */
+			return false;
 		},
 		// 剪切
 		cut() {
@@ -56,10 +60,12 @@ var menu = new Vue({
 			document.execCommand('cut');
 			/* this.setClipBoardData(editor.getCopyText());
 			editor.commands.commands.cut.exec(editor); */
+			return true;
 		},
 		// 搜索
 		search() {
 			editor.commands.byName["find"].exec(editor)
+			return true;
 		},
 		setClipBoardData(text) {
 			function copy(e) {
