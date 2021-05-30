@@ -21,9 +21,9 @@ var menu = new Vue({
 		click() {
 			let [x, y] = this.cursor.style.transform.replace(/.+\((.+)\)/, '$1').split(',');
 			let style = this.$el.style;
-			style.left = Math.min(parseInt(x), document.body.clientWidth - this.$el.children.length * 25) +
+			style.left = Math.clamp(25, parseInt(x), document.body.clientWidth - this.$el.children.length * 25) +
 				'px';
-			style.top = Math.min(parseInt(y), document.body.clientHeight - 25) + 'px';
+			style.top = Math.clamp(5, parseInt(y), document.body.clientHeight - 25) + 'px';
 			style.display = 'block';
 			// console.log(cursor.style.transform.replace(/.+\((.+)\)/, '$1'));
 		},

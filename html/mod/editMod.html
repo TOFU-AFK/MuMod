@@ -58,6 +58,10 @@
 			<i id="find" class="icon search" @click="search();hide()"></i>
 		</div>
 		<link rel="stylesheet" href="menu/style.css" />
+		<script>Math.clamp = function(a, b, c) {
+			if (a < c) [a, c] = [c, a];
+			return a < b ? a : b < c ? c : b; 
+		}</script>
 		<script src="menu/index.js"></script>
 		<script src="index.js"></script>
 	</body>
