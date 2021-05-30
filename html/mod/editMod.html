@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>editMod</title>
-  <!-- Semantic UI -->
-  <link rel="stylesheet" href="../res/semantic@2.4.2.css">
-  <script src="../res/jquery@3.4.1.js"></script>
-  <script src="../res/semantic@2.4.2.js"></script>
-  <div id="file">
-    <!--
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>editMod</title>
+		<!-- Semantic UI -->
+		<link rel="stylesheet" href="../res/semantic@2.4.2.css">
+		<script src="../res/jquery@3.4.1.js"></script>
+		<script src="../res/semantic@2.4.2.js"></script>
+		<script src="../res/vue@2.6.10.js"></script>
+		<div id="file">
+			<!--
 		创建zip`let zip = new JSZip`;
 		创建文件`zip.file(路径, 内容, 压缩级别)`
 		创建目录`zip.folder(路径)`
 		导出文件`zip.export(名称)`
 		-->
-    <script src="../res/file/zip@3.2.js"></script>
-    <script src="../res/file/Exezip.js"></script>
-  </div>
-  <link rel="stylesheet" href="editStyle.css">
-  <link rel="stylesheet" href="menu/style.css" />
-</head>
+			<script src="../res/file/zip@3.2.js"></script>
+			<script src="../res/file/Exezip.js"></script>
+		</div>
+		<link rel="stylesheet" href="editStyle.css">
+		<link rel="stylesheet" href="menu/style.css" />
+	</head>
 
-<body>
-  <!--tab栏-->
-  <div class="mumod_transverse_rolling">
-    <div id="tab" class="ui breadcrumb">
-    </div>
-  </div>
-  <!--代码编辑框-->
-  <div id="box">
-    <div id="editor"></div>
-  </div>
-  
-  <div id="dragbar" class="dragbar">
-    <div id="ellipse" class="ellipse">
-      
-    </div>
-  </div>
-  <!--主要文件 -->
-  <script src="../res/src/ace.js"></script>
-  <!-- 用来提供代码提示和自动补全的插件 -->
-  <script src="../res/src/ext-language_tools.js"></script>
-  <!--引入JavaScript面向对象类库-->
-  <script src="../res/c.js"></script>
-  <script src="../js/muMod.js"></script>
-  <!--引入自定义控件-->
-  <script src="../view/tab.js"></script>
-  <script src="editMod.js"></script>
-  <script src="editor.js"></script>
-  <div id="menu">
-    <i id="copy" class="icon copy"></i>
-    <i id="paste" class="icon paste"></i>
-    <i id="cut" class="icon cut"></i>
-	<i id="find" class="icon search" ></i>
-  </div>
-  <script src="menu/index.js"></script>
-  <script src="index.js"></script>
-</body>
+	<body>
+		<!--tab栏-->
+		<div class="mumod_transverse_rolling">
+			<div id="tab" class="ui breadcrumb">
+			</div>
+		</div>
+		<!--代码编辑框-->
+		<div id="box">
+			<div id="editor"></div>
+		</div>
+
+		<div id="dragbar" class="dragbar">
+			<div id="ellipse" class="ellipse">
+
+			</div>
+		</div>
+		<!--主要文件 -->
+		<script src="../res/src/ace.js"></script>
+		<!-- 用来提供代码提示和自动补全的插件 -->
+		<script src="../res/src/ext-language_tools.js"></script>
+		<!--引入JavaScript面向对象类库-->
+		<script src="../res/c.js"></script>
+		<script src="../js/muMod.js"></script>
+		<!--引入自定义控件-->
+		<script src="../view/tab.js"></script>
+		<script src="editMod.js"></script>
+		<script src="editor.js"></script>
+		<div id="menu">
+			<i id="copy" class="icon copy" @click="copy();hide()"></i>
+			<i id="paste" class="icon paste" @click="paste();hide()"></i>
+			<i id="cut" class="icon cut" @click="cut();hide()"></i>
+			<i id="find" class="icon search" @click="search();hide()"></i>
+		</div>
+		<link rel="stylesheet" href="menu/style.css" />
+		<script src="menu/index.js"></script>
+		<script src="index.js"></script>
+	</body>
 
 </html>
