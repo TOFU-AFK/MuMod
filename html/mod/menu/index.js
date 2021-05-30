@@ -1,17 +1,20 @@
+
+editor.container.addEventListener('touchstart', e => {
+	menu.hide();
+	menu.timeout = setTimeout(() => {
+		menu.interval = setInterval(menu.click, 100);
+		editor.focus();
+		setTimeout(() => editor.selection.selectWord(), 50);
+	}, 600);
+}, true);
+editor.container.addEventListener('touchend', e => {
+	editor.focus()
+	clearTimeout(menu.timeout)
+}, true);
+
 var menu = new Vue({
 	el: '#menu',
 	data() {
-		editor.container.addEventListener('touchstart', e => {
-			this.hide();
-			this.timeout = setTimeout(() => {
-				this.interval = setInterval(this.click, 100);
-				editor.focus();
-				setTimeout(() => editor.selection.selectWord(), 50);
-			}, 600);
-		}, true);
-		editor.container.addEventListener('touchend', e => {
-			clearTimeout(this.timeout)
-		}, true);
 		return {
 			cursor: document.getElementsByClassName('ace_cursor')[0],
 		}
