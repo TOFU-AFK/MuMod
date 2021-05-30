@@ -16,11 +16,8 @@ function openFile(id) {
   var text = getFileTextByPath(tab.getPathById(id));
   var language = getFileNameByPath(tab.getPathById(id)).split('.')[1];
   
-  switch(language){
-    case undefined:
-      language = 'hjson';
-      break;
-    case 'json':
+  switch(language) {
+    case undefined: case'json':
       language = 'hjson';
       break;
     case 'js':

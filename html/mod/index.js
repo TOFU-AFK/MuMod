@@ -20,12 +20,7 @@ $('.ace_scroller')[0].addEventListener('keydown', e => {
 		langTools.addCompleter({
 			getCompletions: function(editor, session, pos, prefix, callback) {
 				// console.log(callback, editor.completer.getPopup().setRow(10));
-				if (prefix.length === 0) {
-					return callback(null, []);
-				} else {
-					return callback(null, data);
-				}
-
+				return callback(null, prefix.length == 0 ? [] : data);
 			}
 		});
 	}
@@ -43,10 +38,11 @@ $('.ace_scroller')[0].addEventListener('keydown', e => {
 		number: '$1',
 		type: '',
 	}
+	/* 描述 */
 	var description = {
 		name: '你东西的名称，默认为文件名',
-
 	}
+	/* 遍历arr */
 	for (var i = 0; i < arr.length; i += 3) {
 		arr2.push({
 			meta: arr[i],
