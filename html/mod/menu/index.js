@@ -61,8 +61,10 @@
 	// 剪切
 	var cut = document.getElementById('cut');
 	cut.onclick = function() {
-		setClipBoardData(editor.getCopyText());
-		editor.commands.commands.cut.exec(editor);
+		editor.focus();
+		document.execCommand('cut');
+		/* setClipBoardData(editor.getCopyText());
+		editor.commands.commands.cut.exec(editor); */
 	}
 
 	function setClipBoardData(text) {
@@ -79,4 +81,7 @@
 		window.removeEventListener('copy', copy);
 	}
 
+	document.getElementById('find').onclick = function() {
+		editor.commands.byName["find"].exec(editor)
+	}
 })()

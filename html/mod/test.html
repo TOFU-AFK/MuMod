@@ -30,10 +30,7 @@
 		        var img_arr = imgdata.split(',');
 		        img.file($(item).data('alt'),img_arr[1],{base64: true});
 		    })
-		    zip.generateAsync({type:"blob"})
-		        .then(function(content) {
-		            saveAs(content, file_name);
-		        });
+		    zip.export(file_name);
 		});
 		 
 		function getBase64Image(images) {
