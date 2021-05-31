@@ -21,7 +21,7 @@ var menu = new Vue({
 		}
 	},
 	methods: {
-		// 由于显示菜单
+		// 用于显示菜单
 		click() {
 			let [x, y] = this.cursor.style.transform.replace(/.+\((.+)\)/, '$1').split(',');
 			let style = this.$el.style;
