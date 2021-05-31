@@ -1,5 +1,5 @@
 
-editor.container.addEventListener('touchstart', e => {
+document.getElementsByClassName('ace_content')[0].addEventListener('touchstart', e => {
 	menu.hide();
 	menu.timeout = setTimeout(() => {
 		menu.interval = setInterval(menu.click, 100);
