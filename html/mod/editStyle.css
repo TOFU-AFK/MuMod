@@ -1,0 +1,130 @@
+.mumod_transverse_rolling {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+/*滚动条样式*/
+.mumod_transverse_rolling::-webkit-scrollbar {
+  height: 2px;
+}
+
+.mumod_tab {
+  width: 100%;
+  height: 35px;
+  background-color: #eeeeee;
+  display: flex;
+}
+
+.mumod_tab_item {
+  background-color: #eeeeee;
+  height: 100%;
+  display: flex;
+  /*width: 60px;*/
+}
+
+.mumod_tab_item .left {
+  width: 35px;
+  height: 100%;
+}
+
+.mumod_tab_item .right {
+  width: 35px;
+  height: 100%;
+}
+
+.mumod_tab_item .middle {
+  height: 100%;
+}
+
+.mumod_left_icon {
+  width: 100%;
+  height: 100%;
+  padding: 25%;
+}
+
+.mumod_right_icon{
+  width: 100%;
+  height: 100%;
+  padding: 18%;
+  color: rgb(86, 80, 121);
+}
+
+/*.mumod_tab_item:hover {
+  background-color: #ffffff;
+}*/
+
+.mumod_tab_item_content{
+  padding-top: 6px;
+  color: rgb(86, 80, 121);
+}
+
+.mumod_active {
+  background-color: #ffffff;
+}
+
+#title {
+  margin: 10px;
+  margin-bottom: 4px;
+}
+
+#box {
+  flex: 1;
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  background-color: #FFFFFF;
+}
+
+* {
+  -webkit-user-select: none;
+}
+
+p {
+  color: rgb(86, 80, 121);
+  margin: 3px;
+}
+
+a {
+  -webkit-tap-highlight-color: rgb(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
+
+div.ace_gutter .ace_gutter-cell {
+  padding-left: 6px;
+  padding-right: 8px;
+}
+
+.dragbar {
+  position: absolute;
+  right: 0;
+  /*top: 50%;*/
+  width: 12px;
+  height: 100%;
+  /*border-radius: 12px;*/
+  background-color: rgb(86, 80, 121);
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 85%;
+  padding-bottom: 85%;
+}
+
+.ellipse {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
