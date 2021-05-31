@@ -2,7 +2,6 @@
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding: 6px;
 }
 
 /*滚动条样式*/
@@ -10,24 +9,63 @@
   height: 2px;
 }
 
+.mumod_tab {
+  width: 100%;
+  height: 35px;
+  background-color: #eeeeee;
+  display: flex;
+}
+
+.mumod_tab_item {
+  background-color: #eeeeee;
+  height: 100%;
+  display: flex;
+  /*width: 60px;*/
+}
+
+.mumod_tab_item .left {
+  width: 35px;
+  height: 100%;
+}
+
+.mumod_tab_item .right {
+  width: 35px;
+  height: 100%;
+}
+
+.mumod_tab_item .middle {
+  height: 100%;
+}
+
+.mumod_left_icon {
+  width: 100%;
+  height: 100%;
+  padding: 25%;
+}
+
+.mumod_right_icon{
+  width: 100%;
+  height: 100%;
+  padding: 18%;
+  color: rgb(86, 80, 121);
+}
+
+/*.mumod_tab_item:hover {
+  background-color: #ffffff;
+}*/
+
+.mumod_tab_item_content{
+  padding-top: 6px;
+  color: rgb(86, 80, 121);
+}
+
 .mumod_active {
-  background-color: rgb(127, 191, 127);
-  color: rgb(127, 165, 127);
+  background-color: #ffffff;
 }
 
 #title {
   margin: 10px;
   margin-bottom: 4px;
-}
-
-#tab, #tab div.mumod_tab_item {
-	display: flex;
-}
-#tab div.mumod_tab_item {
-	margin-left: 10px;
-}
-#tab div.mumod_tab_item .left {
-	margin-right: 3px;
 }
 
 #box {
@@ -44,7 +82,7 @@ body {
   margin: 0;
   display: flex;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   background-color: #FFFFFF;
 }
@@ -59,7 +97,7 @@ p {
 }
 
 a {
-  -webkit-tap-highlight-color: rgb(255, 255, 255);
+  -webkit-tap-highlight-color: rgb(255, 255, 255, 0);
   -webkit-user-select: none;
   -moz-user-focus: none;
   -moz-user-select: none;
@@ -71,7 +109,7 @@ div.ace_gutter .ace_gutter-cell {
 }
 
 .dragbar {
-  position: fixed;
+  position: absolute;
   right: 0;
   /*top: 50%;*/
   width: 12px;
@@ -84,9 +122,9 @@ div.ace_gutter .ace_gutter-cell {
   padding-bottom: 85%;
 }
 
-.ellipse{
-  height:100%;
-  width:100%;
+.ellipse {
+  height: 100%;
+  width: 100%;
   border-radius: 12px;
   background-color: #ffffff;
 }
