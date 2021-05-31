@@ -1,17 +1,25 @@
-#menu.show {
-	background-color: rgb(25, 30, 45);
-	color: snow;
-	position: absolute;
-	display: none;
+#menu {
+	position: fixed;
 	z-index: 100;
 	transform: translate(-10%, -10%);
 	border-radius: 4px;
 	overflow: hidden;
-	transition: all .2s;
+	display: flex;
+	transition: all .1s;
+	--left: -100%;
+	--top: 0%;
+	left: var(--left);
+	top: var(--top);
+}
+#menu.show {
+	background-color: rgb(25, 30, 45);
+	color: snow;
+	transform: translate(0%, 0%);
 }
 #menu.hide {
 	color: transparent;
 	background-color: transparent;
+	transform: translateX(calc(0px - var(--left) - 70%)) scale(0);
 }
 
 #menu i::before {

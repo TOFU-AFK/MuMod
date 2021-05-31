@@ -17,6 +17,7 @@ var menu = new Vue({
 	data() {
 		return {
 			cursor: document.getElementsByClassName('ace_cursor')[0],
+			layer: document.getElementsByClassName('ace_layer ace_gutter-layer ace_folding-enabled')[0],
 		}
 	},
 	methods: {
@@ -24,16 +25,15 @@ var menu = new Vue({
 		click() {
 			let [x, y] = this.cursor.style.transform.replace(/.+\((.+)\)/, '$1').split(',');
 			let style = this.$el.style;
-			style.left = Math.clamp(25, parseInt(x), document.body.clientWidth - this.$el.children.length * 30) +
-				'px';
-			style.top = Math.clamp(5, parseInt(y), document.body.clientHeight - 25) + 'px';
-			style.display = 'flex';
+
+			style.setProperty('--left', Math.clamp(parseInt(this.layer.style.width), parseInt(x), document.body.clientWidth - this.$el.children.length * 30) + 'px');
+			style.setProperty('--top', Math.clamp(5, parseInt(y) + editor.container.offsetTop - 35, document.body.clientHeight - 25) + 'px');
 			this.$el.className = 'show';
 			// console.log(cursor.style.transform.replace(/.+\((.+)\)/, '$1'));
 		},
 		hide() {
 			this.$el.className = 'hide';
-			setTimeout(() => this.$el.style.display = 'none', parseInt(this.$el.style.transitionDuration) * 1000);
+			// setTimeout((() => this.$el.style.display = 'none'), parseInt(this.$el.style.transitionDuration) * 1000);
 			clearInterval(this.interval);
 		},
 		// 复制
