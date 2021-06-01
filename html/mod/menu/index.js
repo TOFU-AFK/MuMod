@@ -6,11 +6,12 @@ document.getElementsByClassName('ace_content')[0].addEventListener('touchstart',
 		menu.$el.className = 'show';
 		menu.click();
 		setTimeout(() => editor.selection.selectWord(), 50);
-		function keydown() {
+		menu.interval = setInterval(() => menu.click(), 80);
+		/* function keydown() {
 			menu.hide()
 			document.removeEventListener('keyup', keydown);
 		}
-		document.addEventListener('keyup', keydown);
+		document.addEventListener('keyup', keydown); */
 	}, 600);
 }, true);
 
@@ -36,10 +37,12 @@ var menu = new Vue({
 
 			style.setProperty('--left', Math.clamp(parseInt(this.layer.style.width), parseInt(x), document.body.clientWidth - this.$el.children.length * 30) + 'px');
 			style.setProperty('--top', Math.clamp(3, parseInt(y) + editor.container.offsetTop - 35, document.body.clientHeight - 25) + 'px');
+			editor.focus()
 			// console.log(cursor.style.transform.replace(/.+\((.+)\)/, '$1'));
 		},
 		hide() {
 			this.$el.className = 'hide';
+			clearInterval(this.interval);
 			// setTimeout((() => this.$el.style.display = 'none'), parseInt(this.$el.style.transitionDuration) * 1000);
 		},
 		// 复制

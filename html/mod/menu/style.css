@@ -1,7 +1,6 @@
 #menu {
 	position: fixed;
 	z-index: 100;
-	transform: translate(-10%, -10%);
 	border-radius: 4px;
 	overflow: hidden;
 	display: flex;
@@ -14,12 +13,12 @@
 #menu.show {
 	background-color: rgb(25, 30, 45);
 	color: snow;
-	transform: translate(0%, 0%);
 }
 #menu.hide {
 	color: transparent;
 	background-color: transparent;
-	transform: translateX(calc(0px - var(--left) - 70%)) scale(0);
+	transform: scale(0);
+	--left: -100%;
 }
 
 #menu i::before {

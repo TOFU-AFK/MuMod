@@ -1,0 +1,18 @@
+
+.dragbar {
+	/*top: 50%;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12px;
+	height: 100%;
+	/*border-radius: 12px;*/
+	background-color: rgb(86, 80, 121);
+}
+
+.ellipse {
+	width: 80%;
+	height: 10vh;
+	border-radius: 12px;
+	background-color: #ffffff;
+}

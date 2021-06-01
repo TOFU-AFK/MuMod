@@ -145,22 +145,3 @@ div.ace_gutter .ace_gutter-cell {
 	padding-left: 6px;
 	padding-right: 8px;
 }
-
-.dragbar {
-	/*top: 50%;*/
-	width: 12px;
-	height: 100%;
-	/*border-radius: 12px;*/
-	background-color: rgb(86, 80, 121);
-	padding-left: 3px;
-	padding-right: 3px;
-	padding-top: 85%;
-	padding-bottom: 85%;
-}
-
-.ellipse {
-	height: 100%;
-	/* width: 100%; */
-	border-radius: 12px;
-	background-color: #ffffff;
-}
