@@ -3,20 +3,19 @@ var tab = new Array();
 var editor = ace.edit("editor");
 
 var lastFile = null;
-var file = null;
 
 var tab = new Tab('tab');
 
-function openFile(id) {
+function openFile(file) {
 	if (lastFile != null) {
-		if (lastFile[0].id == id) return;
+		if (lastFile[0].id == file.id) return;
 		lastFile.removeClass('mumod_active');
 	}
 
-	lastFile = $('#' + id);
+	lastFile = $(file);
 	lastFile.addClass('mumod_active');
-	var text = getFileTextByPath(tab.getPathById(id));
-	var language = getFileNameByPath(tab.getPathById(id)).split('.')[1];
+	var text = getFileTextByPath(tab.getPathById(file.id));
+	var language = getFileNameByPath(tab.getPathById(file.id)).split('.')[1];
 
 	switch (language) {
 		case undefined: case'json':
@@ -38,5 +37,6 @@ function openFile(id) {
 /*首次进入打开的文件*/
 tab.add(getModJsonPath());
 tab.add(getModPath() + '/config.mumod');
+
 
 //$('#tab').html('<div class="mumod_tab_item"><div class="left"><div class="mumod_left_icon"><img src="../images/json.svg"/></div></div><div class="middle"><div class="mumod_tab_item_content">啊这</div></div><div class="right"><div class="mumod_right_icon"><i class="times icon"></i></div></div></div>')

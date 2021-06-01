@@ -10,13 +10,13 @@
 		<script src="../res/jquery@3.4.1.js"></script>
 		<script src="../res/semantic@2.4.2.js"></script>
 		<script src="../res/vue@2.6.10.js"></script>
-		<div id="file">
+		<div id="file" style="display: none;">
 			<!--
-		创建zip`let zip = new JSZip`;
-		创建文件`zip.file(路径, 内容, 压缩级别)`
-		创建目录`zip.folder(路径)`
-		导出文件`zip.export(名称)`
-		-->
+			创建zip`let zip = new JSZip`;
+			创建文件`zip.file(路径, 内容, 压缩级别)`
+			创建目录`zip.folder(路径)`
+			导出文件`zip.export(名称)`
+			-->
 			<script src="../res/file/zip@3.2.js"></script>
 			<script src="../res/file/Exezip.js"></script>
 		</div>
@@ -25,13 +25,20 @@
 	</head>
 
 	<body>
-		<!--tab栏-->
-		<div class="mumod_transverse_rolling">
-			<div id="tab" class="ui breadcrumb">
-			</div>
-		</div>
-		<!--代码编辑框-->
+		
 		<div id="box">
+			<!--顶栏-->
+			<div id="title">
+				<!--tab栏-->
+				<div class="mumod_transverse_rolling">
+					<div id="tab" class="ui breadcrumb"></div>
+				</div>
+				<!--下拉菜单-->
+				<!-- <input id="pull_downMenu_checkbox" type="checkbox" />
+				<label for="pull_downMenu_checkbox" id="pull_downMenu" >···</label>
+				<div></div> -->
+			</div>
+			<!--代码编辑框-->
 			<div id="editor"></div>
 		</div>
 
@@ -44,6 +51,7 @@
 		<script src="../res/src/ace.js"></script>
 		<!-- 用来提供代码提示和自动补全的插件 -->
 		<script src="../res/src/ext-language_tools.js"></script>
+		<script src="../res/src/keybinding-vim.js"></script>
 		<!--引入JavaScript面向对象类库-->
 		<script src="../res/c.js"></script>
 		<script src="../js/muMod.js"></script>
@@ -58,10 +66,7 @@
 			<button @click="search() && hide()"><i id="find" class="icon search"></i></button>
 		</div>
 		<link rel="stylesheet" href="menu/style.css" />
-		<script>Math.clamp = function(a, b, c) {
-			if (a < c) [a, c] = [c, a];
-			return a < b ? a : b < c ? c : b; 
-		}</script>
+		<script>Math.clamp=(a,b,c)=>{if(a<c)[a,c]=[c,a];return a<b?a:b<c?c:b;}</script>
 		<script src="menu/index.js"></script>
 		<script src="index.js"></script>
 	</body>

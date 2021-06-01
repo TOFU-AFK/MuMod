@@ -2,11 +2,18 @@
 document.getElementsByClassName('ace_content')[0].addEventListener('touchstart', e => {
 	menu.hide();
 	menu.timeout = setTimeout(() => {
-		menu.interval = setInterval(menu.click, 100);
 		editor.focus();
+		menu.$el.className = 'show';
+		menu.click();
 		setTimeout(() => editor.selection.selectWord(), 50);
+		function keydown() {
+			menu.hide()
+			document.removeEventListener('keyup', keydown);
+		}
+		document.addEventListener('keyup', keydown);
 	}, 600);
 }, true);
+
 editor.container.addEventListener('touchend', e => {
 	editor.focus()
 	clearTimeout(menu.timeout)
@@ -21,20 +28,19 @@ var menu = new Vue({
 		}
 	},
 	methods: {
-		// 用于显示菜单
+		// 用于显示菜单时的更新
 		click() {
+			if (this.$el.className == 'hide') return;
 			let [x, y] = this.cursor.style.transform.replace(/.+\((.+)\)/, '$1').split(',');
 			let style = this.$el.style;
 
 			style.setProperty('--left', Math.clamp(parseInt(this.layer.style.width), parseInt(x), document.body.clientWidth - this.$el.children.length * 30) + 'px');
-			style.setProperty('--top', Math.clamp(5, parseInt(y) + editor.container.offsetTop - 35, document.body.clientHeight - 25) + 'px');
-			this.$el.className = 'show';
+			style.setProperty('--top', Math.clamp(3, parseInt(y) + editor.container.offsetTop - 35, document.body.clientHeight - 25) + 'px');
 			// console.log(cursor.style.transform.replace(/.+\((.+)\)/, '$1'));
 		},
 		hide() {
 			this.$el.className = 'hide';
 			// setTimeout((() => this.$el.style.display = 'none'), parseInt(this.$el.style.transitionDuration) * 1000);
-			clearInterval(this.interval);
 		},
 		// 复制
 		copy() {

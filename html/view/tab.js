@@ -35,7 +35,7 @@ var Tab = C.createClass({
   },
 
   generateItem: function(name, index, icon) {
-    var run = "openFile('" + index + "')";
+    var run = "openFile(this)";
     return $('<div id="' + index + '" onclick="' + run + '" class="mumod_tab_item"><div class="left"><div class="mumod_left_icon"><img src="../images/' + icon + '.svg"/></div></div><div class="middle"><div class="mumod_tab_item_content">' + name + '</div></div><div class="right"><div class="mumod_right_icon"><i class="times icon"></i></div></div></div>');
   },
 
