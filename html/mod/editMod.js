@@ -8,29 +8,31 @@ var file = null;
 var tab = new Tab('tab');
 
 function openFile(id) {
-  if (lastFile != null) {
-    lastFile.removeClass('mumod_active');
-  }
-  $('#' + id).addClass('mumod_active');
-  lastFile = $('#' + id);
-  var text = getFileTextByPath(tab.getPathById(id));
-  var language = getFileNameByPath(tab.getPathById(id)).split('.')[1];
-  
-  switch(language) {
-    case undefined: case'json':
-      language = 'hjson';
-      break;
-    case 'js':
-      language = 'Javascript';
-      break;
-    case 'java':
-      language = 'java';
-      break;
-    case 'mumod':
-      language = 'json';
-  }
-  editor.getSession().setMode("ace/mode/"+language);
-  editor.setValue(text);
+	if (lastFile != null) {
+		if (lastFile[0].id == id) return;
+		lastFile.removeClass('mumod_active');
+	}
+
+	lastFile = $('#' + id);
+	lastFile.addClass('mumod_active');
+	var text = getFileTextByPath(tab.getPathById(id));
+	var language = getFileNameByPath(tab.getPathById(id)).split('.')[1];
+
+	switch (language) {
+		case undefined: case'json':
+			language = 'hjson';
+			break;
+		case'js':
+			language = 'javascript';
+			break;
+		case'java':
+			language = 'java';
+			break;
+		case'mumod':
+			language = 'json';
+	}
+	editor.getSession().setMode("ace/mode/" + language);
+	editor.setValue(text);
 }
 
 /*首次进入打开的文件*/

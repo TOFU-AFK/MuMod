@@ -36,6 +36,6 @@
 	width: 30px;
 	height: 30px;
 }
-#menu button:hover {
-	background-color: grey;
+#menu button:active {
+	background-color: #545454;
 }
