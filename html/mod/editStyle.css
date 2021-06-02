@@ -5,6 +5,7 @@
 	background-color: rgba(0, 0, 0, 0.2);
 	position: fixed;
 	z-index: 99;
+	display: none;
 }
 
 #title {
@@ -112,7 +113,9 @@
 .mumod_active {
 	background-color: #ffffff;
 }
-
+#tab {
+	width: 0px;
+}
 
 #box {
 	flex: 1;

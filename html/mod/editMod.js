@@ -8,12 +8,12 @@ var tab = new Tab('tab');
 
 function openFile(file) {
 	if (lastFile != null) {
-		if (lastFile[0].id == file.id) return;
-		lastFile.removeClass('mumod_active');
+		if (lastFile.id == file.id) return;
+		lastFile.classList.remove('mumod_active');
 	}
 
-	lastFile = $(file);
-	lastFile.addClass('mumod_active');
+	lastFile = file;
+	lastFile.classList.add('mumod_active');
 	var text = getFileTextByPath(tab.getPathById(file.id));
 	var language = getFileNameByPath(tab.getPathById(file.id)).split('.')[1];
 

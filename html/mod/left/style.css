@@ -12,6 +12,6 @@
 	display: flex;
 	align-items: center;
 }
-#left_bar input {
+#left_checkbox {
 	display: none;
 }
