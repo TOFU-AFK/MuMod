@@ -27,6 +27,7 @@ var left_menu = {
 
 		this.bar.appendChild(canvasElement);
 		this.bar.addEventListener('click', () => this.show());
+		this.mask.style.display = 'none';
 		this.mask.addEventListener('click', () => this.hide())
 	}
 }

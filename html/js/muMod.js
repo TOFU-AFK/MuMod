@@ -97,6 +97,15 @@ function getModJsonPath() {
   }
 }
 
+function getFileIconByPath(path) {
+  var icon = path.split('.')[1];
+  if(icon==undefined){
+    return 'file'
+  }else{
+    return icon;
+  }
+}
+
 function BooleanV(v) {
   if (v == 1) {
     return true;
