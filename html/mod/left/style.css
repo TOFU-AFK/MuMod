@@ -15,9 +15,3 @@
 #left_checkbox {
 	display: none;
 }
-#left_content p {
-	background: white;
-	height: 100vh;
-	padding-top: 10vh;
-	font-size: 5em;
-}
