@@ -2,6 +2,10 @@
 // 初始化editor(）
 var editor = ace.edit("editor");
 
+//设置首次进入打开的文件
+app.addDataOnTab({name:getFileNameByPath(getModJsonPath()),left:'<img src="../images/'+getFileIconByPath(getModJsonPath())+'.svg"/>'});
+app.addDataOnTab({name:getFileNameByPath(getModPath()+'/config.mumod'),left:'<img src="../images/'+getFileIconByPath(getModPath()+'/config.mumod')+'.svg"/>'});
+
 /*var lastFile = null;
 
 var tab = new Tab('tab');

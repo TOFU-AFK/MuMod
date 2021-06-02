@@ -1,13 +1,30 @@
 //处理视图逻辑
 var app = new Vue({
-  el:"#app",
+  el: "#app",
+  methods: {
+    /*
+    在tab栏中添加项目
+    @param {Object} data 添加的项目，必须为对象，其中必须包括 {String} name 项目名称 {String} left 项目左侧html文本
+    */
+    addDataOnTab: function(data){
+      this.itemArray.push(data);
+    },
+    /*
+    在tab栏中添加项目
+    @param {String} itemName 项目名称
+    @param {String} itemLeft 项目左侧html文本
+    */
+    addItemOnTab: function(itemName,itemLeft){
+      this.addDataOnTab({name:itemName,left:itemLeft});
+    },
+  },
   data: {
     /*
     tab栏的项目数组
     @param {String} [name=undefined] 名称，显示在项目中间
     @param {String} [left=undefined] 在项目左侧插入一段html，这里用来显示文件图标
     */
-    itemArray:[{name:'text',left:'<img src="../images/json.svg"/>'},{name:'text',left:'<img src="../images/json.svg"/>'}],
-    item:0
+    itemArray: [],
+    item: 0
   },
 })
