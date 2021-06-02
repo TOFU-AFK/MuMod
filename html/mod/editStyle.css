@@ -47,71 +47,58 @@
 }
 
 /* 滚动条样式 */
-.mumod_transverse_rolling::-webkit-scrollbar {
-	height: 2px;
-}
-
 .mumod_tab {
-	height: 35px;
-	background-color: #eeeeee;
-	display: flex;
+  width: 100%;
+  height: 35px;
+  background-color: #eeeeee;
+  display: flex;
 }
 
 .mumod_tab_item {
-	background-color: #e8e8e8;
-	height: 100%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	/* width: 60px; */
+  background-color: #eeeeee;
+  height: 100%;
+  display: flex;
+  /*width: 60px;*/
 }
 
 .mumod_tab_item .left {
-	width: 35px;
-	height: 100%;
+  width: 35px;
+  height: 100%;
 }
 
 .mumod_tab_item .right {
-	width: 35px;
-	height: 100%;
+  width: 35px;
+  height: 100%;
 }
 
 .mumod_tab_item .middle {
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  height: 100%;
 }
 
 .mumod_left_icon {
-	width: 100%;
-	height: 100%;
-	padding: 25%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 25%;
 }
 
-.mumod_right_icon {
-	width: 100%;
-	height: 100%;
-	padding: 18%;
-	color: rgb(86, 80, 121);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.mumod_right_icon{
+  width: 100%;
+  height: 100%;
+  padding: 18%;
+  color: rgb(86, 80, 121);
 }
 
 /*.mumod_tab_item:hover {
   background-color: #ffffff;
 }*/
 
-.mumod_tab_item_content {
-	color: rgb(86, 80, 121);
+.mumod_tab_item_content{
+  padding-top: 6px;
+  color: rgb(86, 80, 121);
 }
 
 .mumod_active {
-	background-color: #ffffff;
+  background-color: #ffffff;
 }
 #tab {
 	width: 0px;
