@@ -5,12 +5,12 @@ Vue.component('file-tab', {
 Vue.component('file-tab-item', {
   /*
     tab栏的项目数组
-    @param {String} [name=undefined] 名称，显示在项目中间
+    @param {String} [path=undefined] 路径
     @param {String} [left=undefined] 在项目左侧插入一段html，这里用来显示文件图标
     @param {Number} [index=undefined] 项目的索引，用于点击后返回自身数据的索引
   */
   props: {
-    name: String,
+    path: String,
     left: String,
     index: Number,
   },
@@ -26,19 +26,24 @@ Vue.component('file-tab-item', {
     @param {String} zone 被点击的区域(left-左侧区域,middle-中间区域,right-右侧区域)
     */
     fileTabClick: function(data,zone){
-      
+       editor.setValue(getFileTextByPath(app.itemArray[data.itemIndex].path));
     },
   },
+  computed: {
+    getName:function(){
+      return getFileNameByPath(this.path);
+    }
+  },
   template: `<div class="mumod_tab_item">
-			        <div v-on:click="fileTabClick({itemName:name,itemLeft:left,itemIndex:index},'left'),$emit('decide-on',index)" class="left">
+			        <div v-on:click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'left'),$emit('decide-on',index)" class="left">
 			          <div class="mumod_left_icon" v-html="left">
 			          </div>
 			        </div>
-			        <div v-on:click="fileTabClick({itemName:name,itemLeft:left,itemIndex:index},'middle'),$emit('decide-on',index)" class="middle">
-			          <div class="mumod_tab_item_content">{{ name }}
+			        <div v-on:click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'middle'),$emit('decide-on',index)" class="middle">
+			          <div class="mumod_tab_item_content">{{getName}}
 			          </div>
 			        </div>
-			        <div v-on:click="fileTabClick({itemName:name,itemLeft:left,itemIndex:index},'right'),$emit('remove',index)" class="right">
+			        <div v-on:click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'right'),$emit('remove',index)" class="right">
 			          <div class="mumod_right_icon">
 			            <i class="times icon">
 			            </i>
