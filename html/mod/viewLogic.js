@@ -4,18 +4,18 @@ var app = new Vue({
   methods: {
     /*
     在tab栏中添加项目
-    @param {Object} data 添加的项目，必须为对象，其中必须包括 {String} name 项目名称 {String} left 项目左侧html文本
+    @param {Object} data 添加的项目，必须为对象，其中必须包括 {String} path 文件路径 {String} left 项目左侧html文本
     */
-    addDataOnTab: function(data){
+    addDataOnTab: function(data) {
       this.itemArray.push(data);
     },
     /*
     在tab栏中添加项目
-    @param {String} itemName 项目名称
+    @param {String} itemPath 项目名称
     @param {String} itemLeft 项目左侧html文本
     */
-    addItemOnTab: function(itemName,itemLeft){
-      this.addDataOnTab({name:itemName,left:itemLeft});
+    addItemOnTab: function(itemPath, itemLeft) {
+      this.addDataOnTab({ path: itemPath, left: itemLeft });
     },
   },
   data: {
