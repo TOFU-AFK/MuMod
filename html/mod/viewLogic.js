@@ -11,7 +11,7 @@ var app = new Vue({
     },
     /*
     在tab栏中添加项目
-    @param {String} itemPath 项目名称
+    @param {String} itemPath 项目路径
     @param {String} itemLeft 项目左侧html文本
     */
     addItemOnTab: function(itemPath, itemLeft) {
@@ -21,7 +21,7 @@ var app = new Vue({
   data: {
     /*
     tab栏的项目数组
-    @param {String} [name=undefined] 名称，显示在项目中间
+    @param {String} [path=undefined] 路径
     @param {String} [left=undefined] 在项目左侧插入一段html，这里用来显示文件图标
     */
     itemArray: [],
