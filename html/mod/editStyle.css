@@ -99,6 +99,8 @@
 
 .mumod_active {
   background-color: #eeeeee;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 #tab {
 	width: 0px;

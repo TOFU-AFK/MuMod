@@ -1,95 +1,92 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>editMod</title>
-		<!-- Semantic UI -->
-		<link rel="stylesheet" href="../res/semantic@2.4.2.css" />
-		<script src="../res/jquery@3.4.1.js"></script>
-		<script src="../res/semantic@2.4.2.js"></script>
-		<script src="../res/vue@2.6.10.js"></script>
-		<div id="file" style="display: none;">
-			<!--
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>editMod</title>
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="../res/semantic@2.4.2.css" />
+  <script src="../res/jquery@3.4.1.js"></script>
+  <script src="../res/semantic@2.4.2.js"></script>
+  <script src="../res/vue@2.6.10.js"></script>
+  <div id="file" style="display: none;">
+    <!--
 			创建zip`let zip = new JSZip`;
 			创建文件`zip.file(路径, 内容, 压缩级别)`
 			创建目录`zip.folder(路径)`
 			导出文件`zip.export(名称)`
 			-->
-			<script src="../res/file/zip@3.2.js"></script>
-			<script src="../res/file/Exezip.js"></script>
-		</div>
-		<link rel="stylesheet" href="editStyle.css" />
-		<link rel="stylesheet" href="menu/style.css" />
-	</head>
+    <script src="../res/file/zip@3.2.js"></script>
+    <script src="../res/file/Exezip.js"></script>
+  </div>
+  <link rel="stylesheet" href="editStyle.css" />
+  <link rel="stylesheet" href="menu/style.css" />
+</head>
 
-	<body>
-		<div id="box">
-			<!--顶栏-->
-			<div id="title">
-				<!-- 左侧滑栏 -->
-				<label id="left_bar" for="left_checkbox"></label>
-				<!--tab栏-->
-				<div id="app">
-				   <file-tab>
-                                      <file-tab-item v-for="(array,index) in itemArray" v-bind:path="array.path" v-bind:left="array.left" v-bind:index="index" v-bind:key="index" v-on:decide-on="item = $event" v-on:remove="itemArray.splice(index,1)" v-bind:class="{ mumod_active:item==index }">
-                                      </file-tab-item>
-                                   </file-tab>
-				</div>
-				<!--下拉菜单-->
-				<!-- <input id="pull_downMenu_checkbox" type="checkbox" />
+<body>
+  <div id="box">
+    <!--顶栏-->
+    <div id="title">
+      <!-- 左侧滑栏 -->
+      <label id="left_bar" for="left_checkbox"></label>
+      <!--tab栏-->
+      <div id="app">
+        <file-tab>
+          <file-tab-item v-for="(array,index) in itemArray" v-bind:path="array.path" v-bind:left="array.left" v-bind:index="index" v-bind:key="index" v-on:decide-on="item = $event" v-on:remove="itemArray.splice(index,1)" v-bind:class="{ mumod_active:item==index }">
+          </file-tab-item>
+        </file-tab>
+      </div>
+      <!--下拉菜单-->
+      <!-- <input id="pull_downMenu_checkbox" type="checkbox" />
 				<label for="pull_downMenu_checkbox" id="pull_downMenu" >···</label>
 				<div></div> -->
-			</div>
-			<!--代码编辑框-->
-			<div id="editor"></div>
-		</div>
-		<!-- 遮罩 -->
-		<div id="mask"></div>
-
-		<!-- 左侧滑栏 -->
-		<iframe id="left_content" src="left.html"></iframe>
-		<link rel="stylesheet" href="left/style.css" />
-		<script src="left/index.js"></script>
-
-		<div id="dragbar" class="dragbar">
-			<div id="ellipse" class="ellipse" @mousedown="start()" @mousemove="move()" @mouseleave="end()">
-			</div>
-			<div id="dragbar_content">
-				
-			</div>
-			<link rel="stylesheet" href="dragbar/style.css" />
-		</div>
-		<script src="dragbar/index.js"></script>
-
-		<!--主要文件 -->
-		<script src="../res/src/ace.js"></script>
-		<!-- 用来提供代码提示和自动补全的插件 -->
-		<script src="../res/src/ext-language_tools.js"></script>
-		<script src="../res/src/keybinding-vim.js"></script>
-		<!--引入JavaScript面向对象类库-->
-		<script src="../res/c.js"></script>
-		<script src="../js/muMod.js"></script>
-		<!--引入自定义控件
+    </div>
+    <!--代码编辑框-->
+    <div id="editor"></div>
+  </div>
+  <!-- 遮罩 -->
+  <div id="mask"></div>
+  <!-- 左侧滑栏 -->
+  <iframe id="left_content" src="left.html"></iframe>
+  <link rel="stylesheet" href="left/style.css" />
+  <script src="left/index.js"></script>
+  <div id="dragbar" class="dragbar">
+    <div id="ellipse" class="ellipse" @mousedown="start()" @mousemove="move()" @mouseleave="end()">
+    </div>
+    <div id="dragbar_content">
+    </div>
+    <link rel="stylesheet" href="dragbar/style.css" />
+  </div>
+  <script src="dragbar/index.js"></script>
+  <!--主要文件 -->
+  <script src="../res/src/ace.js"></script>
+  <!-- 用来提供代码提示和自动补全的插件 -->
+  <script src="../res/src/ext-language_tools.js"></script>
+  <script src="../res/src/keybinding-vim.js"></script>
+  <!--引入JavaScript面向对象类库-->
+  <script src="../res/c.js"></script>
+  <script src="../js/muMod.js"></script>
+  <!--引入自定义控件
 		<script src="../view/tab.js"></script>-->
-		<script src="../components/tab/fileTab.js"></script>
-		<!--引入视图逻辑-->
-		<script src="viewLogic.js"></script>
-		<script src="editMod.js"></script>
-		<script src="editor.js"></script>
-		
-		<!-- 长按菜单 -->
-		<div id="menu" class="hide">
-			<button @click="copy() && hide()"><i id="copy" class="icon copy"></i></button>
-			<button @click="paste() && hide()"><i id="paste" class="icon paste"></i></button>
-			<button @click="cut() && hide()"><i id="cut" class="icon cut"></i></button>
-			<button @click="search() && hide()"><i id="find" class="icon search"></i></button>
-		</div>
-		<link rel="stylesheet" href="menu/style.css" />
-		<script>Math.clamp=(a,b,c)=>{if(a<c)[a,c]=[c,a];return a<b?a:b<c?c:b;}</script>
-		<script src="menu/index.js"></script>
-		<script src="index.js"></script>
-	</body>
+  <script src="../components/tab/fileTab.js"></script>
+  <!--引入视图逻辑-->
+  <script src="viewLogic.js"></script>
+  <script src="editMod.js"></script>
+  <script src="editor.js"></script>
+  <!-- 长按菜单 -->
+  <div id="menu" class="hide">
+    <button @click="copy() && hide()"><i id="copy" class="icon copy"></i></button>
+    <button @click="paste() && hide()"><i id="paste" class="icon paste"></i></button>
+    <button @click="cut() && hide()"><i id="cut" class="icon cut"></i></button>
+    <button @click="search() && hide()"><i id="find" class="icon search"></i></button>
+  </div>
+  <link rel="stylesheet" href="menu/style.css" />
+  <script>
+    Math.clamp = (a, b, c) => { if (a < c)[a, c] = [c, a]; return a < b ? a : b < c ? c : b; }
+  </script>
+  <script src="menu/index.js"></script>
+  <script src="index.js"></script>
+</body>
 
 </html>

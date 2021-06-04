@@ -3,8 +3,11 @@
 var editor = ace.edit("editor");
 
 //设置首次进入打开的文件
-app.addDataOnTab({name:getFileNameByPath(getModJsonPath()),left:'<img src="../images/'+getFileIconByPath(getModJsonPath())+'.svg"/>'});
-app.addDataOnTab({name:getFileNameByPath(getModPath()+'/config.mumod'),left:'<img src="../images/'+getFileIconByPath(getModPath()+'/config.mumod')+'.svg"/>'});
+var tabDatas = [getModJsonPath(), getModPath() + '/config.mumod'];
+for (i = 0; i < tabDatas.length; i++) {
+  app.addDataOnTab({ path: tabDatas[i], left: '<img src="../images/' + getFileIconByPath(tabDatas[i]) + '.svg"/>' });
+}
+editor.setValue(getFileTextByPath(app.itemArray[app.item].path));
 
 /*var lastFile = null;
 
