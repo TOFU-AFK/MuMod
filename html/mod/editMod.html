@@ -33,7 +33,7 @@
       <!--tab栏-->
       <div id="app">
         <file-tab>
-          <file-tab-item v-for="(array,index) in itemArray" v-bind:path="array.path" v-bind:left="array.left" v-bind:index="index" v-bind:key="index" v-on:decide-on="item = $event" v-on:remove="itemArray.splice(index,1)" v-bind:class="{ mumod_active:item==index }">
+          <file-tab-item v-for="(array,index) in itemArray" :path="array.path" :left="array.left" :index="index" :key="index" @decide-on="item = $event" @remove="itemArray.splice(index,1)" :class="{ mumod_active:item==index }">
           </file-tab-item>
         </file-tab>
       </div>

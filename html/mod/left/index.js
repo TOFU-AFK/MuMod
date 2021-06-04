@@ -17,8 +17,9 @@ var left_menu = {
 		canvasElement.width = 32;
 		canvasElement.height = 32;
 		var canvas = canvasElement.getContext('2d');
-		canvas.strokeStyle = "#2c2c2c";
+		canvas.strokeStyle = '#2c2c2c';
 		canvas.strokeWidth = '5px';
+		canvas.lineCap = 'round'
 		for (var i = 1; i <= 3; i++) {
 			canvas.moveTo(7, 8 * i)
 			canvas.lineTo(25, 8 * i)

@@ -58,7 +58,11 @@
   background-color: #ffffff;
   height: 100%;
   display: flex;
+  transition: all .05s;
   /*width: 60px;*/
+}
+.mumod_tab_item.remove {
+  transform: scaleX(0);
 }
 
 .mumod_tab_item .left {

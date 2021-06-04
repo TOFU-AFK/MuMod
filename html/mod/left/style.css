@@ -11,9 +11,10 @@
 #left_bar {
 	display: flex;
 	align-items: center;
+	transition: all .2s;
 }
-#left_checkbox {
-	display: none;
+#left_bar:hover {
+	background-color: #cbcbcb;
 }
 #left_content p {
 	background-color: red;

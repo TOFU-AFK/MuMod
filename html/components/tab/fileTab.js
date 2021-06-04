@@ -13,6 +13,7 @@ Vue.component('file-tab-item', {
     path: String,
     left: String,
     index: Number,
+	removed: false
   },
   data: function() {
     return {
@@ -28,22 +29,26 @@ Vue.component('file-tab-item', {
     fileTabClick: function(data,zone){
        editor.setValue(getFileTextByPath(app.itemArray[data.itemIndex].path));
     },
+	
+	remove(){
+		setTimeout(() => this.$emit('remove', this.index), 50);
+	}
   },
   computed: {
     getName:function(){
       return getFileNameByPath(this.path);
-    }
+    },
   },
-  template: `<div class="mumod_tab_item">
-			        <div v-on:click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'left'),$emit('decide-on',index)" class="left">
+  template: `<div class="mumod_tab_item" :class="{remove:removed}">
+			        <div @click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'left'),$emit('decide-on',index)" class="left">
 			          <div class="mumod_left_icon" v-html="left">
 			          </div>
 			        </div>
-			        <div v-on:click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'middle'),$emit('decide-on',index)" class="middle">
+			        <div @click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'middle'),$emit('decide-on',index)" class="middle">
 			          <div class="mumod_tab_item_content">{{getName}}
 			          </div>
 			        </div>
-			        <div v-on:click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'right'),$emit('remove',index)" class="right">
+			        <div @click="fileTabClick({itemName:getName,itemLeft:left,itemIndex:index},'right'),remove(),removed=true" class="right">
 			          <div class="mumod_right_icon">
 			            <i class="times icon">
 			            </i>
