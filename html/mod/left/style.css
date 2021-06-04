@@ -15,3 +15,14 @@
 #left_checkbox {
 	display: none;
 }
+#left_content p {
+	background-color: red;
+	color: #58ffff;
+	width: 70vw;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-size: 4em;
+	margin: 0;
+	height: 100%;
+}
