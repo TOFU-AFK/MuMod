@@ -25,11 +25,11 @@ new Vue({
 			this.more = $('#bottom #more')[0];
 			this.checkbox = document.getElementById('bottom_more_checkbox')
 			this.startY = this.getY()
+			this.startH = parseInt(this.more.style.height) || 0
 			this.focus = true
 		},
 		move() {
-			this.more.style.height = Math.clamp(this.max + 6, this.startY - this.getY(), 0) + 'px';
-			
+			this.more.style.height = Math.abs(this.startH - Math.clamp(this.max + 6, this.startY - this.getY(), 0)) + 'px';
 		},
 		moveend() {
 			this.focus = false
