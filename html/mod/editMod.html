@@ -44,6 +44,28 @@
     </div>
     <!--代码编辑框-->
     <div id="editor"></div>
+	<!-- 底部菜单 -->
+	<div id="bottom">
+		<bottom-item _code="indent">→|</bottom-item>
+		<bottom-item _key="'">'</bottom-item>
+		<bottom-item _key='"'>"</bottom-item>
+		<bottom-item _key=",">,</bottom-item>
+		<bottom-item _key="[">[</bottom-item>
+		<bottom-item _key="]">]</bottom-item>
+		<bottom-item _key="{">{</bottom-item>
+		<bottom-item _key="}">}</bottom-item>
+		<input type="checkbox" id="bottom_checkbox" />
+		<label for="bottom_checkbox"><span>></span></label>
+		<div id="more">
+			<bottom-item _key="<"><</bottom-item>
+			<bottom-item _key=">">></bottom-item>
+			<bottom-item _code="undo"><i class="icon undo"></i></bottom-item>
+			<bottom-item _code="redo"><i class="icon redo"></i></bottom-item>
+			<bottom-item _code="showSettingsMenu"><i class="icon setting"></i></bottom-item>
+		</div>
+	</div>
+	<link rel="stylesheet" href="bottom/style.css"/>
+	<script src="bottom/index.js"></script>
   </div>
   <!-- 遮罩 -->
   <div id="mask"></div>

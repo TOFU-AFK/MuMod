@@ -1,0 +1,41 @@
+#bottom {
+	/* width: 100%; */
+	border-top: 1px solid #eeeeee;
+	font-size: 1.2em;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+#bottom span {
+	flex: 1;
+	min-width: 35px;
+	text-align: center;
+	padding: 6px 0px;
+	font-weight: 800
+}
+#bottom span:active {
+	background-color: #cbcbcb;
+}
+
+#bottom input {
+	display: none;
+}
+#bottom label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotate(90deg);
+	transition: all .1s;
+}
+#bottom input:checked ~ label {
+	transform: rotate(0deg);
+}
+#bottom #more {
+	display: none;
+	width: 100%;
+	font-size: 1.2em;
+	flex-wrap: wrap;
+}
+#bottom input:checked ~ #more {
+	display: flex;
+}
