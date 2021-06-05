@@ -13,7 +13,7 @@
 	padding: 6px 0px;
 	font-weight: 800
 }
-#bottom span:active {
+#bottom span:active, #bottom label:active {
 	background-color: #cbcbcb;
 }
 
@@ -24,10 +24,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transform: rotate(90deg);
-	transition: all .1s;
 }
-#bottom input:checked ~ label {
+#bottom label span {
+	transition: all .1s;
+	transform: rotate(90deg);
+}
+#bottom label span:active {
+	background: none;
+}
+#bottom input:checked ~ label span {
 	transform: rotate(0deg);
 }
 #bottom #more {
