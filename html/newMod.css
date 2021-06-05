@@ -37,6 +37,7 @@
 }
 
 .fluid_input {
+  display: block;
   width: 100%;
   padding: 8px;
   background-color: white;
