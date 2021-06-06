@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  /*display: flex;*/
+}
+
+* {
+  -webkit-user-select: none;
+}
+
+#left {
+  display: flex;
+}
+
+#page {
+  display: block;
+  width: 88vw;
+}
+
+.mumod_page_top {
+  width: 100%;
+  height: 25px;
+  background-color: #eeeeee;
+  color: rgb(86, 80, 121);
+  border-bottom: 1px solid #ffffff;
+}
+
+.mumod_page_top_title {
+  padding-left: 12px;
+  text-align: left;
+  line-height: 25px;
+}
+
+.mumod_description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /*如果描述文本超过2行，将省略显示*/
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.mumod_left_tab {
+  width: 35px;
+  height: 100vh;
+  background-color: #eeeeee;
+}
+
+.mumod_tab_item {
+  width: 100%;
+  height: 35px;
+  color: rgb(86, 80, 121);
+  line-height: 35px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.mumod_active {
+  /*background-color: #ffffff;*/
+  color: #1E9FFF;
+}
