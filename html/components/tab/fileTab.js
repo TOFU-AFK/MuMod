@@ -27,7 +27,7 @@ Vue.component('file-tab-item', {
     @param {String} zone 被点击的区域(left-左侧区域,middle-中间区域,right-右侧区域)
     */
     fileTabClick: function(data,zone){
-       editor.setValue(getFileTextByPath(app.itemArray[data.itemIndex].path));
+       editor.session.setValue(getFileTextByPath(app.itemArray[data.itemIndex].path));
     },
 	
 	remove(){
