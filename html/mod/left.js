@@ -1,3 +1,13 @@
+function create(){
+      return `<div class="item">
+                <i class="folder icon"></i>
+                <div class="content">
+                  <div class="header">mod.json</div>
+                  <div class="description">I don't know.</div>
+                </div>
+              </div>`
+    }
+
 var left = new Vue({
   el: "#left",
   methods: {
@@ -5,33 +15,38 @@ var left = new Vue({
       itemArray.push({icon:iicon,title:ititle,page:ipage});
     }
   },
+  computed: {
+    createItem: function(name){
+      
+    },
+  },
   data: {
     //tab栏的项目数组
     itemArray: [
     {
       icon:'folder',
       title:'文件',
-      page:''
+      page:`<div class="ui list">`+create()+`</div>`
     },
     {
       icon:'search',
       title:'搜索',
-      page:''
+      page:'去尼玛'
     },
     {
       icon:'play',
-      title:'打包',
-      page:''
+      title:'运行',
+      page:'制作中'
     },
     {
       icon:'code branch',
       title:'代码分支',
-      page:''
+      page:'不做，占位置'
     },
     {
       icon:'th',
       title:'插件',
-      page:''
+      page:'暂无'
     }
     ],
     //itemArray: ['folder','search','play','code branch','th'],
