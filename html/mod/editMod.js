@@ -7,7 +7,8 @@ var tabDatas = [getModJsonPath(), getModPath() + '/config.mumod'];
 for (i = 0; i < tabDatas.length; i++) {
   app.addDataOnTab({ path: tabDatas[i], left: '<img src="../images/' + getFileIconByPath(tabDatas[i]) + '.svg"/>' });
 }
-editor.setValue(getFileTextByPath(app.itemArray[app.item].path));
+
+editor.session.setValue(getFileTextByPath(app.itemArray[app.item].path));
 
 /*var lastFile = null;
 
