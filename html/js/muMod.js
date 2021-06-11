@@ -106,6 +106,14 @@ function getFileIconByPath(path) {
   }
 }
 
+function getModFileList(){
+  try{
+    return muMod.getModFileList()
+  }catch(e){
+    return { 'mod.json':'mod.json', 'config.mumod':'config.mumod'}
+  }
+}
+
 function BooleanV(v) {
   if (v == 1) {
     return true;
