@@ -21,11 +21,12 @@
       <left-tab-item v-for="(array,index) in itemArray" :item-icon="array.icon" :index="index" :key="index" :class="{ mumod_active:item==index }">
       </left-tab-item>
     </left-tab>
-    <page-top :title="title">
+    <page-top :title="title" :page="itemArray[item].page">
     </page-top>
   </div>
   <script src="../js/muMod.js"></script>
   <script src="../components/left/leftTab.js"></script>
+  <script src="../components/fileList/fileList.js"></script>
   <script src="../components/left/page.js"></script>
   <script src="left.js"></script>
 </body>
