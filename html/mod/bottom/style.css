@@ -42,7 +42,7 @@
 #bottom_more_checkbox {
 	display: none;
 }
-#bottom label span {
+#bottom label[for='bottom_more_checkbox'] span {
 	transition: all .1s;
 	transform: rotate(-90deg);
 }

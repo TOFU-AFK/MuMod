@@ -1,11 +1,15 @@
 body {
   padding: 24px;
   margin: 0;
+  box-sizing: border-box;
   background-color: #FFFFFF;
+  width: 100vw;
+  --width: calc(100vw - 48px)
 }
 
 * {
   -webkit-user-select: none;
+  font-size: calc(var(--witdh) / 25);
 }
 
 p {
@@ -18,6 +22,9 @@ a {
   -webkit-user-select: none;
   -moz-user-focus: none;
   -moz-user-select: none;
+}
+img {
+	flex: 1;
 }
 
 .mumod_bottom {
@@ -82,6 +89,7 @@ a {
 }
 
 .purple_card {
+	box-sizing: border-box;
   background-color: rgb(103, 95, 144);
   padding: 6px;
   border-radius: 6px;
@@ -98,10 +106,18 @@ a {
   /*标准语法，必须放在最后*/
 }
 
+.mumod_image_text {
+	display: flex;
+	/* 自适应高度 */
+	height: calc(var(--witdh) / 16 * 9);
+}
+
 .mumod_image_text .text {
-  position: fixed;
-  top: 16%;
-  left: 16%;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 10%;
+  text-shadow: calc(0.5vw) calc(0.5vw) calc(0.5vw) #0D71BB;
 }
 
 .mumod_image_text .text .mumod_title {
@@ -112,11 +128,22 @@ a {
   color: white;
 }
 
+.bottom {
+	margin-top: 2%;
+	box-sizing: border-box;
+	width: var(--width);
+}
+
 .mumod_mod {
   width: 100%;
   height: 60px;
   display: flex;
   margin-bottom: 50px;
+}
+
+.mumod_title {
+	height: calc(var(--witdh) * 0.05);
+	font-size: calc(var(--witdh) * 0.05);
 }
 
 .mumod_mod_icon {
